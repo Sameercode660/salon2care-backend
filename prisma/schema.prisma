@@ -18,3 +18,12 @@ model Admin {
   email String
   password String
 }
+
+// model User {
+//   id String @id @default(uuid())
+//   name String 
+//   email String @unique
+
+// }
+
+
