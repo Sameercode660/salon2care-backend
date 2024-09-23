@@ -14,28 +14,40 @@ datasource db {
 }
 
 model Admin {
-  id       String @id @default(uuid())
-  email    String @unique
-  password String
+  id        String   @id @default(uuid())
+  email     String   @unique
+  password  String
   createdAt DateTime @default(now())
 }
 
 model User {
-  id        String @id @default(uuid())
+  id        String   @id @default(uuid())
   firstName String
   surname   String
-  email     String @unique
+  email     String   @unique
   password  String
   otp       String
   createdAt DateTime @default(now())
 }
 
 model Appointment {
-  id          String @id @default(uuid())
+  id          String   @id @default(uuid())
   fullName    String
   email       String
   phoneNumber String
   category    String
-  date DateTime @default(now())
-  message String
+  date        DateTime @default(now())
+  message     String
+  status      String   @default("ACCEPTED")
+}
+
+model Donation {
+  id                    String   @id @default(uuid())
+  fullName              String
+  email                 String
+  phoneNumber           String
+  address               String
+  typeOfDonation        String
+  additionalInformation String?
+  createdAt             DateTime @default(now())
 }
