@@ -10,6 +10,7 @@ export async function POST(req: NextRequest) {
 
     const { email, password } = body;
 
+    console.log(email, password)
     if (!email || !password) {
       return NextResponse.json({
         statusCode: 404,

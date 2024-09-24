@@ -25,7 +25,9 @@ export async function POST(req: NextRequest) {
             return NextResponse.json({statusCode: 400, message: 'User already exists', status: false})
         }
 
-        const otp = await nodeMailer(email);
+        // const otp = await nodeMailer(email);
+
+        const otp = "1234"
 
         if(!otp) {
             return NextResponse.json({statusCode: 500, message: 'Sorry, unable to generate the Otp(internal server Error)', status: false});
