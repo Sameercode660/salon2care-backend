@@ -18,7 +18,7 @@ export const appointmentMail = async (email: string, name: string, appointment: 
     html: `
     <p>Dear ${name},</p>
     
-    <p>Thank you for scheduling an appointment with <strong>Style And Perfect</strong>. We are pleased to confirm your appointment as follows:</p>
+    <p>Thank you for scheduling an appointment with <strong>Hair4Life</strong>. We are pleased to confirm your appointment as follows:</p>
 
     <ul>
       <li><strong>Date:</strong> ${new Date(appointment).toLocaleDateString()}</li>
@@ -29,7 +29,7 @@ export const appointmentMail = async (email: string, name: string, appointment: 
     
     <p>We kindly ask that you arrive a few minutes prior to your appointment to ensure that everything runs smoothly.</p>
     
-    <p>Thank you for choosing <strong>Style And Perfect</strong>! We can't wait to see you.</p>
+    <p>Thank you for choosing <strong>Hair4Life</strong>! We can't wait to see you.</p>
     
     <p>Warm regards,</p>
     <p><strong>Style & Perfect</strong><br>

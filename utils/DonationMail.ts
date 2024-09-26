@@ -29,7 +29,7 @@ export const donationMail = async (email: string, name: string) => {
         <p>Warm regards,</p>
         <p><strong>Omkar Kadam & Spurti Kulkarni</strong><br>
         <strong></strong><br>
-        <strong>Style & Perfect</strong><br>
+        <strong>Hair4Life</strong><br>
         <a href="https://your-website.com">Our website</a><br>
         <a href="mailto:your-email@gmail.com">Contact Us</a></p>
       `,
