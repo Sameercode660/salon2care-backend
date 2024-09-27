@@ -7,45 +7,42 @@ export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
 
-    const { fullName } = body;
+    const { id } = body;
 
-    if (!fullName) {
-      return NextResponse.json({
-        statusCode: 404,
-        message: "Fullname is sent empty",
-        status: false,
-      });
-    }
-
-    const response = await prisma.appointment.findMany({
+    const check = await prisma.user.findUnique({
       where: {
-        fullName: {
-          contains: fullName, // The name entered by the user
-          mode: "insensitive", // Case-insensitive search
-        },
+        id,
       },
     });
 
+    if (!check) {
+      return NextResponse.json({
+        statusCode: 404,
+        message: "Unable to delete or not found",
+        status: false,
+      });
+    }
+    const response = await prisma.user.delete({
+      where: {
+        id,
+      },
+    });
+
+    console.log(response);
     if (!response) {
       return NextResponse.json({
-        statusCode: 200,
-        message: "No any customer exits",
+        statusCode: 404,
+        message: "Unable to delete or not found",
         status: false,
       });
     }
 
     return NextResponse.json({
       statusCode: 200,
-      message: "fetch successfully",
-      response,
+      message: "Deleted Successfully",
       status: true,
     });
   } catch (error) {
     console.log(error);
-    return NextResponse.json({
-      statusCode: 500,
-      message: "Unable to perform the search",
-      status: false,
-    });
   }
 }

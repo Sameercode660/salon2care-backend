@@ -10,7 +10,7 @@ export async function GET() {
 
         const total = response.length;
 
-        return NextResponse.json({statusCode: 200, response: {total}, status: true})
+        return NextResponse.json({statusCode: 200, total: total, status: true})
     } catch (error) {
         console.log(error)
         return NextResponse.json({statusCode: 500, message: 'Unable to fetch appointment', status: false})

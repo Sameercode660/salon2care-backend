@@ -9,7 +9,7 @@ export async function GET() {
 
         const totalCustomer = response.length;
 
-        return NextResponse.json({statusCode: 200, response: {totalCustomer}, status: true})
+        return NextResponse.json({statusCode: 200, total: totalCustomer, status: true})
         
     } catch (error) {
         console.log(error)
